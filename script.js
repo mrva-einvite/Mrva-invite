@@ -3,13 +3,14 @@ const front = card.querySelector(".front");
 const back = card.querySelector(".back");
 
 function setFlipped(flipped) {
-  card.classList.toggle("flipped", flipped);
+  // on <body> so the CSS can also stop the wobble
+  document.body.classList.toggle("flipped", flipped);
   card.setAttribute("aria-pressed", String(flipped));
   front.setAttribute("aria-hidden", String(flipped));
   back.setAttribute("aria-hidden", String(!flipped));
 }
 
-const toggle = () => setFlipped(!card.classList.contains("flipped"));
+const toggle = () => setFlipped(!document.body.classList.contains("flipped"));
 
 // tap anywhere flips
 card.addEventListener("click", toggle);

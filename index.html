@@ -4,28 +4,28 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#000000">
+  <meta name="format-detection" content="telephone=no, date=no, address=no">
   <title>MRVA — Grand Opening</title>
-  <meta name="description" content="MRVA Grand Opening · Friday, 30th October 2026 · Salem Al Mubarak St, Salmiya, Kuwait">
+  <meta name="description" content="MRVA Grand Opening · Friday, 30th October 2026 · Al-Salam Mall, Salem Al Mubarak St, Block 10, Salmiya, Kuwait">
   <link rel="preload" as="image" href="landing-centered.jpg">
   <link rel="preload" as="image" href="mrva-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <main class="scene">
-    <div class="card" id="card" role="button" tabindex="0" aria-pressed="false" aria-label="Flip invitation">
+    <div class="wobble">
+      <div class="card" id="card" role="button" tabindex="0" aria-pressed="false" aria-label="Flip invitation">
 
-      <!-- FRONT: landing -->
-      <section class="face front">
-        <img class="logo" src="mrva-logo.png" alt="MRVA">
-        <p class="hint">details</p>
-      </section>
+        <!-- FRONT: landing -->
+        <section class="face front">
+          <img class="logo" src="mrva-logo.png" alt="MRVA">
+        </section>
 
-      <!-- BACK: event details -->
-      <section class="face back" aria-hidden="true">
-        <article class="poster">
+        <!-- BACK: event details -->
+        <section class="face back poster" aria-hidden="true">
           <h1 class="title">GRAND<br>OPENING</h1>
 
           <div class="block">
@@ -36,19 +36,16 @@
             <p class="big">30.<br>10.<br>26</p>
           </div>
 
-          <div class="block location">
+          <div class="block">
             <div class="meta">
               <span class="label">Location</span>
-              <a class="detail" id="mapLink" href="https://maps.google.com/?q=Salem+Al+Mubarak+St,+Salmiya,+Kuwait" target="_blank" rel="noopener">
-                Salem Al Mubarak St, Salmiya, Kuwait&nbsp;↗
-              </a>
+              <a class="detail" id="mapLink" href="https://maps.google.com/?q=Al-Salam+Mall,+Salem+Al+Mubarak+St,+Block+10,+Salmiya,+Kuwait" target="_blank" rel="noopener">Salem Al Mubarak St, Block 10, Salmiya, Kuwait</a>
             </div>
-            <p class="big">SALMIYA</p>
+            <p class="big">AL-SALAM<br>MALL</p>
           </div>
-        </article>
-        <p class="hint hint-back">back</p>
-      </section>
+        </section>
 
+      </div>
     </div>
   </main>
   <script src="script.js"></script>
