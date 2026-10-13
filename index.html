@@ -4,47 +4,49 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#000000">
-  <title>MRVA — You're Invited</title>
+  <title>MRVA — Grand Opening</title>
+  <meta name="description" content="MRVA Grand Opening · Friday, 30th October 2026 · Salem Al Mubarak St, Salmiya, Kuwait">
+  <link rel="preload" as="image" href="landing-centered.jpg">
+  <link rel="preload" as="image" href="mrva-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <main class="scene">
-    <div class="card" id="card">
+    <div class="card" id="card" role="button" tabindex="0" aria-pressed="false" aria-label="Flip invitation">
 
       <!-- FRONT: landing -->
-      <section class="face front" aria-label="Invitation">
-        <img class="logo" src="Mrva_Logo.jpeg" alt="MRVA">
-        <button class="details-btn" id="detailsBtn" type="button">details</button>
+      <section class="face front">
+        <img class="logo" src="mrva-logo.png" alt="MRVA">
+        <p class="hint">details</p>
       </section>
 
-      <!-- BACK: event details (recreation of Recreate.jpeg) -->
-      <section class="face back" aria-label="Event details" aria-hidden="true">
-        <div class="poster">
-          <h1 class="title">POP-UP<br>SHOP</h1>
-          <p class="host">Hosted by Odd One Out</p>
+      <!-- BACK: event details -->
+      <section class="face back" aria-hidden="true">
+        <article class="poster">
+          <h1 class="title">GRAND<br>OPENING</h1>
 
-          <div class="block date-block">
-            <p class="label">Date</p>
-            <p class="big date">03.<br>25.<br>24</p>
-          </div>
-
-          <div class="block location-block">
-            <p class="label">Location</p>
-            <div class="location-row">
-              <p class="big">NYC</p>
-              <p class="blurb">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                nonummy nibh euismod tincidunt ut laoreet dolore magna quam erat
-                volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
-                ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo.
-              </p>
+          <div class="block">
+            <div class="meta">
+              <span class="label">Date</span>
+              <span class="detail">Friday, 30th October 2026</span>
             </div>
+            <p class="big">30.<br>10.<br>26</p>
           </div>
-        </div>
-        <button class="back-btn" id="backBtn" type="button">back</button>
+
+          <div class="block location">
+            <div class="meta">
+              <span class="label">Location</span>
+              <a class="detail" id="mapLink" href="https://maps.google.com/?q=Salem+Al+Mubarak+St,+Salmiya,+Kuwait" target="_blank" rel="noopener">
+                Salem Al Mubarak St, Salmiya, Kuwait&nbsp;↗
+              </a>
+            </div>
+            <p class="big">SALMIYA</p>
+          </div>
+        </article>
+        <p class="hint hint-back">back</p>
       </section>
 
     </div>
