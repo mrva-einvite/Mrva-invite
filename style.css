@@ -1,0 +1,226 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  background: #000;
+  color: #fff;
+  font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+button {
+  font: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ---------- Flip scene ---------- */
+
+.scene {
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  perspective: 1600px;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 1.1s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* ---------- Front / landing ---------- */
+
+.front {
+  background: #000 url("Landing.jpeg") center 60% / cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: max(6vh, env(safe-area-inset-top)) 16px max(8vh, env(safe-area-inset-bottom));
+}
+
+.logo {
+  width: min(52vw, 280px);
+  height: auto;
+  /* drops the logo's black box so only the white letters show */
+  mix-blend-mode: screen;
+  opacity: 0;
+  animation: fadeIn 1.6s ease-out 0.2s forwards;
+}
+
+.details-btn {
+  color: #c8c8c8;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  text-transform: lowercase;
+  padding: 12px 20px;
+  opacity: 0;
+  animation: fadeIn 2s ease-out 1.4s forwards, pulse 3s ease-in-out 3.4s infinite;
+}
+
+.details-btn:hover,
+.details-btn:focus-visible {
+  color: #fff;
+  outline: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.45; }
+}
+
+/* ---------- Back / details poster ---------- */
+
+.back {
+  transform: rotateY(180deg);
+  background: #111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: max(16px, env(safe-area-inset-top)) 16px max(12px, env(safe-area-inset-bottom));
+}
+
+.poster {
+  /* fit the poster's 1092:1660 ratio inside the viewport */
+  --ratio: 0.658;
+  width: min(100vw - 32px, (100dvh - 80px) * var(--ratio), 640px);
+  aspect-ratio: 1092 / 1660;
+  container-type: inline-size;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1.6cqw 2.4cqw 2.4cqw;
+  border-radius: 1.4cqw;
+  color: #7c7c7c;
+  background-color: #efefef;
+  /* faint 4 x 7 grid like the original */
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.045) 1px, transparent 1px);
+  background-size: 25% calc(100% / 7);
+  background-position: 2.4cqw 0;
+  overflow: hidden;
+}
+
+/* fallback for browsers without 100dvh in calc */
+@supports not (height: 100dvh) {
+  .poster { width: min(100vw - 32px, (100vh - 80px) * var(--ratio), 640px); }
+}
+
+.title,
+.big {
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 0.84;
+}
+
+.title {
+  font-size: 23.5cqw;
+  margin-left: -0.6cqw;
+}
+
+.host {
+  position: absolute;
+  top: 11.5cqw;
+  right: 1.6cqw;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: max(1.7cqw, 8px);
+  font-weight: 700;
+  color: #333;
+}
+
+.label {
+  font-size: max(1.75cqw, 9px);
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1.8cqw;
+}
+
+.big {
+  font-size: 21cqw;
+  margin-left: -0.6cqw;
+}
+
+.date {
+  line-height: 0.82;
+}
+
+.date-block {
+  margin-top: 22cqw;
+}
+
+.location-block {
+  margin-top: auto;
+}
+
+.location-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 4cqw;
+}
+
+.blurb {
+  width: 45cqw;
+  font-size: max(1.7cqw, 8.5px);
+  font-weight: 700;
+  line-height: 1.45;
+  color: #333;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  padding-bottom: 0.4cqw;
+}
+
+.back-btn {
+  color: #8a8a8a;
+  font-size: 0.75rem;
+  letter-spacing: 0.35em;
+  padding: 6px 16px;
+}
+
+.back-btn:hover,
+.back-btn:focus-visible {
+  color: #fff;
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card { transition-duration: 0.01s; }
+  .logo,
+  .details-btn { animation: none; opacity: 1; }
+}
