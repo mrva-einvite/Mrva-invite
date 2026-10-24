@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en" translate="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <meta name="google" content="notranslate">
+  <meta name="format-detection" content="telephone=no, date=no, address=no">
+  <title>MRVA — Grand Opening</title>
+  <meta name="description" content="Join us for the opening of MRVA Studio · 30 October, 8:00pm · Al Salam Mall, Salmiya">
+  <meta property="og:title" content="MRVA — Grand Opening">
+  <meta property="og:description" content="Join us for the opening of MRVA Studio · 30 October, 8:00pm · Al Salam Mall, Salmiya">
+  <link rel="preload" as="image" href="landing-bg.jpg">
+  <link rel="preload" as="image" href="mrva-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Noto+Sans+Arabic:wght@400&family=Raleway:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="scene">
+    <div class="wobble">
+      <div class="card" id="card" role="button" tabindex="0" aria-pressed="false" aria-label="Flip invitation">
+
+        <!-- FRONT: landing -->
+        <section class="face front">
+          <img class="logo" src="mrva-logo.png" alt="MRVA">
+        </section>
+
+        <!-- BACK: event details. Numbers are positions in the 810 x 1440 source PDF:
+             --g = baseline of the group's first line, --b = this line's baseline,
+             --s = font size, --x / --r = left / right edge -->
+        <section class="face back" aria-hidden="true">
+          <div class="sheet">
+            <div class="poster">
+
+              <!-- "GRA" is tightened so the N's of GRAND and OPENING line up -->
+              <h1 class="ln big" style="--g:164.7; --b:164.7; --s:158; --x:0"><span class="gra">GRA</span>ND</h1>
+              <p class="ln big" style="--g:164.7; --b:280.4; --s:158; --x:0">OPENING</p>
+              <p class="ln ar" lang="ar" dir="rtl" style="--g:164.7; --b:342.8; --s:35; --x:23.5">افتتاح رهيب</p>
+
+              <p class="ln small end" style="--g:427.2; --b:427.2; --s:28; --r:796.7">Join us for the opening of MRVA Studio</p>
+              <p class="ln ar end" lang="ar" dir="rtl" style="--g:427.2; --b:460.1; --s:28; --r:796.7">نتشرف بدعوتكم لحضور افتتاح استوديو مارفا الجديد</p>
+
+              <p class="ln big" style="--g:667.9; --b:667.9; --s:158; --x:6.5"><span class="oct-o">O</span>CT</p>
+              <!-- the 3 is centred under the O; OCT is tightened so the 0 starts under the C -->
+              <p class="ln big" style="--g:667.9; --b:811.2; --s:158; --x:18.7">30</p>
+
+              <p class="ln small end" style="--g:863.7; --b:863.7; --s:28; --r:788.8">
+                Location - <a class="map-text" href="https://maps.app.goo.gl/amvvCEa2CFPec1r99?g_st=ic" target="_blank" rel="noopener">Al Salam Mall, Salmiya</a>
+              </p>
+              <a class="ln map-btn end" href="https://maps.app.goo.gl/amvvCEa2CFPec1r99?g_st=ic" target="_blank" rel="noopener" style="--g:863.7; --b:918; --s:21; --r:788.8">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg>
+                Click here for location
+              </a>
+
+              <p class="ln small" style="--g:990.5; --b:990.5; --s:28; --x:6.5">Start Time | <span lang="ar" dir="rtl">وقت الافتتاح</span></p>
+              <p class="ln big time" style="--g:990.5; --b:1105.9; --s:143; --x:0">8:00pm</p>
+
+              <p class="ln small" style="--g:1170.9; --b:1170.9; --s:28; --x:6.5">Opening Act | <span lang="ar" dir="rtl">وقت العرض</span></p>
+              <p class="ln big time" style="--g:1170.9; --b:1284.4; --s:143; --x:0">8:15pm</p>
+
+              <p class="ln small end" style="--g:1339.4; --b:1339.4; --s:28; --r:792.7">Kindly RSVP</p>
+
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- the hint sits outside the card so it fades instead of flipping -->
+    <div class="hints" aria-hidden="true">
+      <p class="hint hint-front"><span>CLICK HERE</span></p>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
