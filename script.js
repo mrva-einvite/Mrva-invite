@@ -21,9 +21,14 @@ card.addEventListener("keydown", (e) => {
   }
 });
 
-// opening the map shouldn't flip the card
+// opening the map shouldn't flip the card. The map opens in this tab (new
+// tabs are blocked in some in-app browsers), so remember the details side
+// first: pressing back returns guests to it.
 document.querySelectorAll(".back a").forEach((a) =>
-  a.addEventListener("click", (e) => e.stopPropagation())
+  a.addEventListener("click", (e) => {
+    e.stopPropagation();
+    history.replaceState(null, "", "#details");
+  })
 );
 
 // a link ending in #details opens straight onto the details side

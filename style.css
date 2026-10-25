@@ -24,6 +24,9 @@ body {
   background: #000;
   font-family: "Atkinson Hyperlegible", "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
+  /* the poster is laid out to exact type sizes; stop phones enlarging text */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
   overflow: hidden;
 }
 
@@ -77,6 +80,13 @@ body {
   inset: 0;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+}
+
+/* Safari can still hit-test the hidden face, so a tap on the map link could
+   land on the landing side instead; only the visible face takes taps */
+.flipped .front,
+body:not(.flipped) .back {
+  pointer-events: none;
 }
 
 /* ---------- Front ---------- */
